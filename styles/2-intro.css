@@ -1,0 +1,81 @@
+.underscore {
+  animation: blink;
+  animation-duration: 350ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.intro {
+  position: relative;
+  background-image: url(../images/main_intro.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.intro__dark {
+  position: absolute;
+  top: 0px; bottom: 0px;
+  left: 0px; right: 0px;
+  text-align: center;
+  background-color: rgba(0,0,0, 0.10);
+}
+
+.intro__type {
+  display: inline-flex;
+  gap: 0.32em;
+  font-family: var(--font-code);
+  font-size: 2.8em;
+  font-weight: bold;
+  color: white;
+}
+
+/* intro__tilt 를 갖고있는 모든 클래스 */
+[class^="intro__tilt"] {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background-color: rgb(113, 136, 238);
+  clip-path: polygon(100% 90%, 100% 100%, 0 100%, 0 0);
+  opacity: 0.5;
+}
+
+.intro__tilt--flip {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 90%);
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .intro {
+    height: 100vh;
+  }
+
+  .intro__type {
+    margin-top: 36vh;
+    flex-direction: column;
+    text-align: left;
+  }
+}
+
+@media (min-width: 769px) {
+  .intro {
+    height: 500px;
+  }
+
+  .intro__type {
+    margin-top: 172px;
+    align-items: center;
+  }
+  
+  .intro__type span {
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: 0.25em;
+  }
+}
+
+@keyframes blink {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
