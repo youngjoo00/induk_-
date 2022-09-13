@@ -1,15 +1,16 @@
 .header {
   display: flex;
-  position: sticky;
+  position: fixed;
 
   /* 스크롤업되는 컨텐츠 위로 올라오게 함 */
-  z-index: 2;
+  z-index: 1;
 
   top: 0;
   height: var(--height-toolbar);
+  width: 100vw;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(113, 136, 238, 0.75);
+  background-color: #37C3FF;
   color: white;
 }
 
@@ -96,7 +97,7 @@
     left: 50%;
     width: 0;
     height: 0;
-    background-color: white;
+    background-color: black;
     transition: all 350ms;
   }
   .header__nav-item:hover::after {

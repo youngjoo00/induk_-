@@ -1,11 +1,9 @@
-@import url('./styles/1-header.css');
-@import url('./styles/2-intro.css');
-@import url('./styles/3-main.css');
-@import url('./styles/4-about.css');
-@import url('./styles/5-html-css.css');
-@import url('./styles/6-curriculum.css');
-@import url('./styles/7-contact.css');
-@import url('./styles/8-footer.css');
+@import url('./styles/header.css');
+@import url('./styles/index.css');
+@import url('./styles/menu.css');
+@import url('./styles/notice.css');
+@import url('./styles/contact.css');
+@import url('./styles/footer.css');
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
@@ -39,8 +37,8 @@ body {
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
 
-  /* 개발용 설정 */
-  min-height: 300vh;
+  /* 개발용 설정
+  min-height: 300vh; */
 }
 
 h1, h2, h3, h4, h5, h6 {
