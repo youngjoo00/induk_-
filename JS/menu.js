@@ -1,22 +1,17 @@
-let obj = {
-  name : "youngjoo",
-  age : 22,
-  greeting : (name) => {
-    console.log(`나는 ${name} 입니다. 안녕하세요.`)
-  }
-}
+const tabs = document.querySelectorAll("[data-tab-target]");
+const tabContent = document.querySelectorAll("[data-tab-content");
 
-console.log(obj.name);
 
-let man_json = JSON.stringify(obj)
-console.log(man_json);
+// tabs.forEach((tab)=> {
+//   tab.addEventListener("click", () => {
+//     const target = document.querySelector(tab.dataset.tabTarget);
+//     tabContent.forEach((tabContent_All) => {
+//       tabContent_All.classList.remove("active");
+//     });
+//     target.classList.add("active");
+//   })
+// });
 
-let man_obj = JSON.parse(man_json);
-console.log(man_obj);
 
-const HI = obj.greeting("zz");
-
-// 콜백을 활용해 자기가 원하는 데이터와 값을 뽑아낼 수 있음
-const manJSON_Name = JSON.stringify(obj, ['name']);
-
-console.log(manJSON_Name);
+// 탭을 누르면 class = "active" 가 생겨야함
+// 기존에 있던 active 는 없어져야함

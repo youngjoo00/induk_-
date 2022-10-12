@@ -28,37 +28,24 @@ body {
 .main__select {
   display: flex;
   width: 80vw;
-  height: 10vh;
+  height: 30px;
   border-bottom: 1px solid black;
-  align-items: flex-end;
-  gap: 5px;
+  justify-content: space-around;
 }
 
-.main__select > span:first-child {
-  height: 45px;
-  background-color: #332B55;
-  color: white;
-  line-height: 45px;
-  font-weight: bold;
-}
 
-.main__span {
-  text-align: center;
-  width: 100px;
-  height: 25px;
-  border: 1px solid black;
-  border-bottom: none;
-  padding: 2px;
-}
-
-.main__span:first-child {
-  margin-left: 5px;
-}
 
 .main__menu {
+  display: none;
+}
+
+.menu__recommend {
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
+}
+.main__tab {
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .article__menu01 {
