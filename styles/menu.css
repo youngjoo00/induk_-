@@ -1,3 +1,6 @@
+body {
+  background-color: #FFF5ED;
+}
 .main__h1 {
   position: relative;
   margin: 10px 0;
@@ -5,10 +8,10 @@
 }
 
 .section__menu {
+  margin-top: 20px;
   display: flex;
   width: 100vw;
   height: 100vh;
-  border: 1px solid blueviolet;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -65,7 +68,7 @@
 }
 
 .main__menu > h1 {
-  font-size: var(--font-size-title);
+  font-size: 30px;
   font-weight: bold;
   text-align: center;
   position: relative;

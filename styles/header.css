@@ -97,7 +97,7 @@
     left: 50%;
     width: 0;
     height: 0;
-    background-color: black;
+    background-color: white;
     transition: all 350ms;
   }
   .header__nav-item:hover::after {
