@@ -1,7 +1,9 @@
 body {
   background-color: #FFF5ED;
+  font-family: 'ONE-Mobile-POP';
 }
-.main__h1 {
+
+.main__span {
   position: relative;
   margin: 10px 0;
   font-size: var(--font-size-title);
@@ -33,8 +35,6 @@ body {
   justify-content: space-around;
 }
 
-
-
 .main__menu {
   display: none;
 }
@@ -50,6 +50,7 @@ body {
   border: none;
   font-size: 20px;
   cursor: pointer;
+  font-family: 'ONE-Mobile-POP';
 }
 
 .article__menu01 {
@@ -58,9 +59,8 @@ body {
   height: 30vh;
 }
 
-.main__menu > h1 {
+.main__menu > span {
   font-size: 30px;
-  font-weight: bold;
   text-align: center;
   position: relative;
   top: 5px;
@@ -83,14 +83,12 @@ body {
 
 .article__text01 > h2 {
   font-size: var(--font-size-subtitle);
-  font-weight: bold;
 }
 .article__text01 > * {
   margin-top: 10px;
 }
 .article__text01 > h3 {
   font-size: var(--font-size-larger);
-  font-weight: bold;
 }
 
 .image {

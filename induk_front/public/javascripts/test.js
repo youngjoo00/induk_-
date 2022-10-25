@@ -83,7 +83,7 @@ function Pacth_UserEdit() {
   .then((data) => {console.log(data)})
 };
 
-Get_UserList();
+// Get_UserList();
 
 // Post_UserCreate();
 
@@ -119,3 +119,25 @@ function Post_CocktailCreate() {
 // Get_CocktailList();
 // Post_CocktailCreate();
 // Get_CocktailCategoryList();
+
+// const NEWURL = 'https://mycocktail.shop/'
+// function Get_NewUrlUserList() {
+//   const url = `${NEWURL}/account/user/list/`;
+
+//   fetch(url)
+//   .then((res) =>res.json())
+//   .then((data) => {console.log(data);})
+// }
+
+// Get_NewUrlUserList();
+
+// 게시판
+function Get_PostsList() {
+  const url = `${ip}/posts`;
+
+  fetch(url)
+  .then((res) =>res.json())
+  .then((data) => {console.log(data);})
+}
+
+Get_PostsList();

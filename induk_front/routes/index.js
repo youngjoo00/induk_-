@@ -43,6 +43,10 @@ router.get('/header', function(req, res, next) {
 router.get('/edit', function(req, res, next) {
   res.render('edit', '');
 });
+
+router.get('/admin_menu', function(req, res, next) {
+  res.render('admin_menu', '');
+});
 // req -> 만약 주소에 파라미터 값이 넘어 올 때, 파라미터 값을 ':파라미터 값' 형식으로 처리 가능하다.
 // 이 경우는 주소로 들어온 'id'를 조회하려면 req.param 객체를 조회하면 된다.(req.param.id)
 // router.get('/users/:id', function(req, res) {

@@ -4,30 +4,32 @@ const ip = `http://3.39.226.145:8000`;
 
 const local_username = window.localStorage.getItem("login-username"); 
 
-function Get_AdminToken() {
-  const url = `${ip}/account/user/list/`;
+const local_token = window.localStorage.getItem("access-token"); 
 
-  return fetch(url)
-  .then((res) =>res.json())
-  .then((data) => {
-    for(let i = 0; i<Object.keys(data).length; i++) {
-      if('관리자' === local_username) {
-        const AdminToken = data[i].token;
-        return AdminToken;
-      }
-    }
-  })
-}
+// function Get_AdminToken() {
+//   const url = `${ip}/account/user/list/`;
+
+//   return fetch(url)
+//   .then((res) =>res.json())
+//   .then((data) => {
+//     for(let i = 0; i<Object.keys(data).length; i++) {
+//       if('관리자' === local_username) {
+//         const AdminToken = data[i].token;
+//         return AdminToken;
+//       }
+//     }
+//   })
+// }
 
 // 관리자 토큰 값 뽑아내기
-async function adminCheck() {
-  const adminToken = await Get_AdminToken();
+// async function adminCheck() {
+//   const adminToken = await Get_AdminToken();
 
-  console.log("관리자 토큰 값 : " + adminToken);
-  Post_CocktailCategoryCreate(adminToken);
-}
+//   console.log("관리자 토큰 값 : " + adminToken);
+//   Post_CocktailCategoryCreate(adminToken);
+// }
 
-adminCheck();
+// adminCheck();
 
 // 도수 카테고리
 function Get_CocktailCategoryList() {
@@ -38,20 +40,20 @@ function Get_CocktailCategoryList() {
   .then((data) => {console.log(data);})
 }
 
-function Post_CocktailCategoryCreate(adminToken) {
-  console.log("Post_CategoryCreate 내부 : " + adminToken);
+function Post_CocktailCategoryCreate(local_token) {
+  console.log("Post_CategoryCreate 내부 : " + local_token);
   fetch(`${ip}/cocktail/category/`, {
     method: 'POST',
     headers: { 
       'Content-Type' : 'application/json',
-      Authorization: `token ${adminToken}`,
+      Authorization: `token ${local_token}`,
     },
     body: JSON.stringify({
-      name: '10~20%',
+      name: '20~30%',
     })
   })
-  .then((res) => console.log(res))
-  // .then((data) => console.log(data))
+  .then((res) => res.json())
+  .then((data) => console.log(data))
 };
 
 // function Pacth_UserEdit(newUser) {
@@ -80,6 +82,7 @@ function Post_CocktailCategoryCreate(adminToken) {
 // })
 // };
 
+// Post_CocktailCategoryCreate(local_token);
 // Get_CocktailCategoryList();
 
 // function Get_UserList() {
@@ -91,3 +94,36 @@ function Post_CocktailCategoryCreate(adminToken) {
 // }
 
 // Get_UserList();
+
+const menu_img = document.getElementById("menu_img");
+const menu_name = document.querySelector(".menu__name");
+const menu_alcohol = document.querySelector(".menu__alcohol");
+const menu_category = document.querySelector(".menu__category");
+const menu_ingredient = document.querySelector(".menu__ingredient");
+
+// 칵테일 
+function Get_CocktailList() {
+  const url = `${ip}/cocktail`;
+
+  fetch(url)
+  .then((res) =>res.json())
+  .then((data) => {
+    const menu = {
+      img : data[4].image,
+      name : data[4].name,
+      alcohol : data[4].alcohol,
+      category : data[4].category,
+      ingredient : data[4].ingredient,
+    }
+    console.log("html 쿼리 : " + menu_img);
+    console.log("menu 오브젝트" + menu.img)
+    menu_img.innerHTML = `<img src = "${menu.img}" />`;
+    menu_name.innerText = menu.name;
+    menu_alcohol.innerText = menu.alcohol;
+    menu_category.innerText = menu.category;
+    // join 함수로 중간에 공백 넣기
+    menu_ingredient.innerText = menu.ingredient.join(" ");
+  })
+}
+
+Get_CocktailList();
