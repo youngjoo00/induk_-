@@ -1,0 +1,94 @@
+body {
+  background-color: #FFF5ED;
+}
+
+.section__board {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.board__wrap {
+  width: 1000px;
+  margin: 100px auto;
+}
+
+.board__title {
+  margin-bottom: 30px;
+}
+
+.board__title > strong {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.board__title > p {
+  margin-top: 5px;
+  font-size: 1.4rem;
+}
+
+.board__bt {
+  margin-top: 30px;
+}
+
+.board__bt > a {
+  display: inline-block;
+  min-width: 80px;
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.board__bt > a:first-child {
+  margin-left: 0;
+}
+
+.bt__list {
+  background: #000;
+  color: #fff;
+}
+
+.board__list {
+  width: 100%;
+  border-top: 2px solid #000
+}
+
+.board__list > div {
+  border-bottom: 1px solid #ddd;
+}
+
+.board__list > div.board__top {
+  border-bottom: 1px solid #ddd;
+}
+
+.board__list > div:last-child {
+  border-bottom: 1px solid #000;
+}
+
+.board__list > div > div {
+  display: inline-block;
+  font-size: 1.0rem;
+  text-align: center;
+}
+
+.board__list .num {
+  width: 10%;
+}
+.board__list .title {
+  width: 60%;
+}
+.board__list .writer {
+  width: 10%;
+}
+.board__list .date {
+  width: 10%;
+}
+.board__list .count {
+  width: 10%;
+}

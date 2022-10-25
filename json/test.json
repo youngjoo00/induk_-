@@ -1,0 +1,6 @@
+body {
+  "category" : "1~10%",
+  "name" : "깔루아 밀크",
+  "alcohol" : "21",
+  "ingredient" : ["깔루아", "우유"]
+}
